@@ -32,7 +32,7 @@ function handleSubmit(e) {
       renderGallery(images);
     })
     .catch(err => {
-      console.error(' No resalts:', err);
+      console.error('No resalts', err);
       hideLoader();
       showMessage();
     });

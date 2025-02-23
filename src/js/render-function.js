@@ -20,7 +20,7 @@ function createImgCard(image) {
   return `
     <div class="photo-card">
       <a href="${largeImageURL}" target="_blank">
-        <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+        <img src="${webformatURL}" alt="${tags}" loading="lazy"/>
       </a>
       <div class="info">
         <p><strong>Likes:</strong> ${likes}</p>
@@ -36,6 +36,7 @@ function createImgCard(image) {
 const lightbox = new SimpleLightbox('.gallery a', {
   captionData: 'alt',
   captionDelay: 250,
+  captions: true,
 });
 
 export function renderGallery(images) {
