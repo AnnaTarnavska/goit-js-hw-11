@@ -1,4 +1,4 @@
-import { getImage } from './js/pixabay-api.js';
+import {getImage} from './js/pixabay-api.js';
 import {
     hideLoader,
     renderGallery,

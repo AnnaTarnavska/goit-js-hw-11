@@ -1,12 +1,20 @@
 import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const gallery = document.querySelector('.gallery');
 const loading = document.querySelector('.loader-div');
 
-function createImgCard(image) {
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionData: 'alt',
+  captionDelay: 250,
+  captions: true,
+  showCounter: false,
+});
+
+export function createImgCard(image) {
   const {
     webformatURL,
     largeImageURL,
@@ -23,21 +31,16 @@ function createImgCard(image) {
         <img src="${webformatURL}" alt="${tags}" loading="lazy"/>
       </a>
       <div class="info">
-        <p><strong>Likes:</strong> ${likes}</p>
-        <p><strong>Views:</strong> ${views}</p>
-        <p><strong>Comments:</strong> ${comments}</p>
-        <p><strong>Downloads:</strong> ${downloads}</p>
+        <p><strong>Likes:</strong>${likes}</p>
+        <p><strong>Views:</strong>${views}</p>
+        <p><strong>Comments:</strong>${comments}</p>
+        <p><strong>Downloads:</strong>${downloads}</p>
       </div>
     </div>
   `;
+
 }
 
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionData: 'alt',
-  captionDelay: 250,
-  captions: true,
-});
 
 export function renderGallery(images) {
   gallery.innerHTML = images.map(createImgCard).join('');
