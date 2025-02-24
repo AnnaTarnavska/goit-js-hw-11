@@ -1,8 +1,9 @@
 import SimpleLightbox from "simplelightbox";
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import "simplelightbox/dist/simple-lightbox.min.css";
 
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
 
 const gallery = document.querySelector('.gallery');
 const loading = document.querySelector('.loader-div');
@@ -10,8 +11,6 @@ const loading = document.querySelector('.loader-div');
 const lightbox = new SimpleLightbox('.gallery a', {
   captionData: 'alt',
   captionDelay: 250,
-  captions: true,
-  showCounter: false,
 });
 
 export function createImgCard(image) {
@@ -26,7 +25,7 @@ export function createImgCard(image) {
   } = image;
   
   return `
-    <div class="photo-card">
+    <div class="image-card">
       <a href="${largeImageURL}" target="_blank">
         <img src="${webformatURL}" alt="${tags}" loading="lazy"/>
       </a>
@@ -67,7 +66,7 @@ export function showMessage() {
       'Sorry, there are no images matching your search query. Please try again!',
     messageSize: '16px',
     messageLineHeight: '24px',
-    messageColor: 'white',
+    messageColor: '#fff',
     maxWidth: '432px',
     backgroundColor: '#EF4040',
   });

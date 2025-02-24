@@ -9,9 +9,9 @@ import {
 const form = document.querySelector('.form');
 const input = document.querySelector('.search-input');
 
-form.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', funSubmit);
 
-function handleSubmit(e) {
+function funSubmit(e) {
   e.preventDefault();
 
   const searchText = input.value.trim();
